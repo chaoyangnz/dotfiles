@@ -23,6 +23,6 @@ sudo apt update && apt -y install git
 # github login
 gh auth login
 
-cd ~ && git clone https://github.com/chaoyangnz/dotfiles-${os}.git dotfiles && cd -
-cd ~/dotfiles && bash script/bootstrap.sh && cd -
+cd ~ && git clone --recurse-submodules https://github.com/chaoyangnz/dotfiles-${os}.git .dotfiles && cd -
+cd ~/.dotfiles && bash script/bootstrap.sh && cd -
 
