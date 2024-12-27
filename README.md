@@ -3,5 +3,5 @@
 install
 
 ```
-curl -o- https://raw.githubusercontent.com/chaoyangnz/dotfiles/refs/heads/master/install.sh | bash
+curl -o- https://raw.githubusercontent.com/chaoyangnz/dotfiles/master/install.sh | bash
 ```
