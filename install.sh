@@ -10,6 +10,8 @@ esac
 # install git
 if [ $os = 'linux' ]; then
 sudo apt update && apt -y install git
+else
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install git
 fi
 
 # install gh cli
