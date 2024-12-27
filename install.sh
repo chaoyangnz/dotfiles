@@ -8,7 +8,9 @@ case "$(uname -sr))" in
 esac
 
 # install git
+if [ $os = 'linux' ]; then
 sudo apt update && apt -y install git
+fi
 
 # install gh cli
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
