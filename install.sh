@@ -11,6 +11,7 @@ esac
 if [ $os = 'linux' ]; then
 sudo apt update && apt -y install git
 else
+export PATH="/opt/homebrew/bin:$PATH"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install git
 fi
 
