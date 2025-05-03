@@ -10,11 +10,6 @@ esac
 # install git
 if [ $os = 'linux' ]; then
 sudo apt update && apt -y install git
-else
-export PATH="/opt/homebrew/bin:$PATH"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install git
-fi
-
 # install gh cli
 (type -p wget >/dev/null || (sudo apt update && sudo apt-get install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
@@ -24,6 +19,10 @@ fi
 	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 	&& sudo apt update \
 	&& sudo apt install gh -y
+else
+export PATH="/opt/homebrew/bin:$PATH"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install git gh
+fi
 
 # github login
 gh auth login
